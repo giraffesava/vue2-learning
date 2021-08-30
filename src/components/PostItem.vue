@@ -1,11 +1,11 @@
 <template>
-  <div class="post">
+  <div class="post" v-rainbow>
     <div>
       <strong>{{ post.id }}. Title:</strong> {{ post.title }}
     </div>
     <div><strong>Description:</strong> {{ post.desc }}</div>
     <my-button @click="$emit('remove')">Delete</my-button>
-    <my-button @click="$emit('remove')">Open</my-button>
+    <my-button @click="$router.push(`/posts/${post.id}`)">Open</my-button>
   </div>
 </template>
 

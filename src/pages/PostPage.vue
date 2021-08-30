@@ -11,7 +11,7 @@
     </my-dialog>
     <post-list v-if="!loading" :posts="filterSortedPosts" @remove="removePost" />
     <div v-else>Loading...</div>
-    <div ref="observer"></div>
+    <div v-intersection="loadMorePosts"></div>
     <!-- Page pagination by click -->
     <!-- <div class="pages">
       <div
@@ -128,17 +128,17 @@ export default {
   mounted() {
     this.fetchPosts()
     //https://developer.mozilla.org/ru/docs/Web/API/Intersection_Observer_API
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0,
-    }
-    const callback = (entries, observer) => {
-      if (entries[0].isIntersecting && this.page < this.totalPages) {
-        this.loadMorePosts()
-      }
-    }
-    const observer = new IntersectionObserver(callback, options)
-    observer.observe(this.$refs.observer)
+    // const options = {
+    //   rootMargin: '0px',
+    //   threshold: 1.0,
+    // }
+    // const callback = (entries, observer) => {
+    //   if (entries[0].isIntersecting && this.page < this.totalPages) {
+    //     this.loadMorePosts()
+    //   }
+    // }
+    // const observer = new IntersectionObserver(callback, options)
+    // observer.observe(this.$refs.observer)
   },
   computed: {
     sortedPosts() {
@@ -173,7 +173,6 @@ export default {
   margin: 0 auto;
 }
 .buttons {
-  margin-top: 20px;
   align-items: flex-end;
   display: flex;
   flex-direction: row;
