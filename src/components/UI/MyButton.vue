@@ -17,12 +17,18 @@ export default {
 
 <style scoped>
 .btn {
-  margin-top: 20px;
-  border: 2px solid green;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 10px;
   background-color: teal;
   cursor: pointer;
   min-width: 80px;
-  min-height: 40px;
+  padding: 5px;
+  height: 40px;
   font-size: 20px;
+  color: #fff;
+}
+.btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 </style>

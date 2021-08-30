@@ -20,5 +20,6 @@ export default {
   padding: 1;
   font-size: 20px;
   width: 300px;
+  height: 40px;
 }
 </style>
