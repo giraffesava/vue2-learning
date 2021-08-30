@@ -1,8 +1,11 @@
 <template>
   <div class="post">
-    <div><strong>Title:</strong> {{ post.title }}</div>
+    <div>
+      <strong>{{ post.id }}. Title:</strong> {{ post.title }}
+    </div>
     <div><strong>Description:</strong> {{ post.desc }}</div>
     <my-button @click="$emit('remove')">Delete</my-button>
+    <my-button @click="$emit('remove')">Open</my-button>
   </div>
 </template>
 
@@ -25,8 +28,5 @@ export default {
   align-items: center;
   justify-content: space-between;
   font-size: 22px;
-}
-.button {
-  background-color: red;
 }
 </style>
